@@ -185,7 +185,7 @@ int main()
 	ExMessage msg;
 	const int FPS = 60;
 
-	initgraph(640, 480);
+	initgraph(1280, 1080);
 	BeginBatchDraw();//ÔÝÍ£Êä³ö£¬½«´°¿Ú»º´æ
 
 	menu_scene = new MenuScene();
