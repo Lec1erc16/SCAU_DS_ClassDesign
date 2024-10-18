@@ -5,6 +5,7 @@
 #include "scene.h"
 #include "scene_manager.h"
 #include "animation.h"
+#include "camera.h"
 
 extern SceneManager scene_manager;
 extern Atlas atlas_peashooter_run_right;
@@ -37,7 +38,8 @@ public:
 	void on_draw()
 	{
 		/*outtextxy(0, 0, _T("Ö÷²Ëµ¥³¡¾°"));*/
-		animation_peashooter_run_right.on_draw(100, 100);
+		const Vector2& pos = camera.get_position();
+		animation_peashooter_run_right.on_draw((int)(100-pos.x), (int)(100-pos.y));
 	}
 
 	void on_exit()
@@ -46,6 +48,7 @@ public:
 	}
 private:
 	Animation animation_peashooter_run_right;
+	Camera camera;
 };
 
 #endif // !_MENU_SCENE_H_
