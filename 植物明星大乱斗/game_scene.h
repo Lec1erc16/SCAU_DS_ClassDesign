@@ -50,7 +50,7 @@ public:
 		*/
 		std::cout << "#更新游戏界面#" << std::endl;
 	}
-	void on_draw()
+	void on_draw(const Camera& camera)
 	{
 		/*
 		* 动画类和相机类测试

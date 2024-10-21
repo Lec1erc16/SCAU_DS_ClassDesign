@@ -52,9 +52,9 @@ public:
 	{
 		current_scene->on_update(delay);
 	}
-	void on_draw()
+	void on_draw(const Camera& camera)
 	{
-		current_scene->on_draw();
+		current_scene->on_draw(camera);
 	}
 private:
 	Scene* current_scene = nullptr;

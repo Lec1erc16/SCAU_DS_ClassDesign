@@ -15,6 +15,8 @@
 Scene* menu_scene = nullptr;
 Scene* game_scene = nullptr;
 Scene* selector_scene = nullptr;
+
+Camera main_camera;
 SceneManager scene_manager;
 
 //图片资源
@@ -185,7 +187,7 @@ int main()
 	ExMessage msg;
 	const int FPS = 60;
 
-	initgraph(1280, 1080);
+	initgraph(1280, 720);
 	BeginBatchDraw();//暂停输出，将窗口缓存
 
 	menu_scene = new MenuScene();
@@ -210,7 +212,7 @@ int main()
 		last_tick_time = GetTickCount();
 
 		cleardevice();//使用背景色清空窗口
-		scene_manager.on_draw();
+		scene_manager.on_draw(main_camera);
 		FlushBatchDraw();//输出缓存窗口
 
 		DWORD frame_end_time = GetTickCount();
